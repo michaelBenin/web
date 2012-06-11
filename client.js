@@ -1,8 +1,8 @@
 window.onload = (function()
 {
-	var wsUri = "ws://66.108.74.131/";
+	var wsUri = "";
 	var protocol = "echo-protocol";
-   	window.websocket = new WebSocket(wsUri, protocol);
+   	window.websocket = new WebSocket('ws://66.108.74.131/');
     websocket.onopen = function(evt)
     	{
         	setTimeout(function()
