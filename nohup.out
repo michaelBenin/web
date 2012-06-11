@@ -50,3 +50,27 @@ This type of response MUST NOT have a body. Ignoring write() calls.
 99.118.28.106
 192.168.1.1
 192.168.1.1
+
+/home/administrator/.node_libraries/.npm/websocket/1.0.4/package/lib/WebSocketRequest.js:235
+                throw new Error("Illegal character '" + String.fromCharCode(ch
+                      ^
+Error: Illegal character '
+
+/home/administrator/.node_libraries/.npm/websocket/1.0.4/package/lib/WebSocketRequest.js:235
+                throw new Error("Illegal character '" + String.fromCharCode(ch
+                      ^
+Error: Illegal character '
+
+/home/administrator/.node_libraries/.npm/websocket/1.0.4/package/lib/WebSocketRequest.js:240
+            throw new Error("Specified protocol was not requested by the clien
+                  ^
+Error: Specified protocol was not requested by the client.
+    at WebSocketRequest.accept (/home/administrator/.node_libraries/.npm/websocket/1.0.4/package/lib/WebSocketRequest.js:240:19)
+    at WebSocketServer.<anonymous> (/var/web/server.js:88:27)
+    at WebSocketServer.emit (events.js:81:20)
+    at WebSocketServer.handleUpgrade (/home/administrator/.node_libraries/.npm/websocket/1.0.4/package/lib/WebSocketServer.js:179:14)
+    at Server.<anonymous> (native)
+    at Server.emit (events.js:81:20)
+    at Socket.<anonymous> (http.js:1035:14)
+    at Socket._onReadable (net.js:683:27)
+    at IOWatcher.onReadable [as callback] (net.js:177:10)
