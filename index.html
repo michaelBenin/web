@@ -3,7 +3,8 @@
 	<head>
 	<script>
     window.websocket = new WebSocket('ws://66.108.74.131/', 'echo-protocol');
-    websocket.onopen = function(evt)
+    websocket.onopen = open;
+	function open(evt)
     	{
         	setTimeout(function()
 			{
