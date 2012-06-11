@@ -6,24 +6,36 @@
    	window.websocket = new WebSocket(wsUri, protocol);
     	websocket.addEventListener('open', function(evt)
     	{
-        	var obj = {"msg":"A new user has joined"};
-		websocket.send(JSON.stringify(obj));
+        	setTimeout(function()
+			{
+				var obj = {"msg":"A new user has joined"};
+				websocket.send(JSON.stringify(obj));
+			}, 0);
     	});
 
    	websocket.addEventListener('close', function (evt)
     	{
-        	writeToScreen("Disconnected");
+			setTimeout(function()
+			{
+        		writeToScreen("Disconnected");
+			}, 0);
     	});
    
 	websocket.addEventListener('message', function(evt)
     	{  
-		var msg = JSON.parse(evt.data);
-        	writeToScreen('<span style="color:blue;">Response: '+ msg.msg + '</span>');
+		setTimeout(function()
+			{
+				var msg = JSON.parse(evt.data);
+        		writeToScreen('<span style="color:blue;">Response: '+ msg.msg + '</span>');
+			}, 0);
     	});
     	
 	websocket.addEventListener('error', function(evt)
     	{
-        	writeToScreen('<span style="color:red;">Error: </span> '+ evt.data);
+			setTimeout(function()
+			{
+        		writeToScreen('<span style="color:red;">Error: </span> '+ evt.data);
+			}, 0);
     	});
 
 	document.addEventListener('keypress', function keyPress(e) 
