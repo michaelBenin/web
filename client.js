@@ -1,10 +1,10 @@
-(function()
+window.onload = (function()
 {
 	var wsUri = "ws://66.108.74.131/";
 	var protocol = "echo-protocol";
-
-   	window.websocket = new WebSocket(wsUri, protocol);
-    	websocket.addEventListener('open', function(evt)
+	me = this
+   	websocket = new WebSocket(wsUri, protocol);
+    	me.websocket.addEventListener('open', function(evt)
     	{
         	setTimeout(function()
 			{
@@ -13,7 +13,7 @@
 			}, 0);
     	});
 
-   	websocket.addEventListener('close', function (evt)
+   	me.websocket.addEventListener('close', function (evt)
     	{
 			setTimeout(function()
 			{
@@ -21,7 +21,7 @@
 			}, 0);
     	});
    
-	websocket.addEventListener('message', function(evt)
+	me.websocket.addEventListener('message', function(evt)
     	{  
 		setTimeout(function()
 			{
@@ -30,7 +30,7 @@
 			}, 0);
     	});
     	
-	websocket.addEventListener('error', function(evt)
+	me.websocket.addEventListener('error', function(evt)
     	{
 			setTimeout(function()
 			{
