@@ -3,7 +3,7 @@
 	var wsUri = "ws://66.108.74.131/";
 	var protocol = "echo-protocol";
 
-   	websocket = new WebSocket(wsUri, protocol);
+   	window.websocket = new WebSocket(wsUri, protocol);
     	websocket.addEventListener('open', function(evt)
     	{
         	var obj = {"msg":"A new user has joined"};
