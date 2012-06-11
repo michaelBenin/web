@@ -63,25 +63,20 @@ var commands = [];
 wsServer = new WebSocketServer(
 {
 	httpServer: server,
-	autoAcceptConnections: false
+	autoAcceptConnections: true
 });
 
 function checkOrigin(origin)
 {
-	if (origin !== "http://66.108.74.131")
-	{
-		console.log(origin);
-	}
-	else
-	{
+	
 		return true;
-	}
+	
 
 }
 
 wsServer.on('request', function (request)
 {
-	console.log(connection.remoteAddress);
+	console.log(request.origin);
 	
 	if (!checkOrigin(request.origin))
 	{
