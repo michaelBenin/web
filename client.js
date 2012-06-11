@@ -1,4 +1,4 @@
-window.onload = (function()
+window.onload = function()
 {
    	window.websocket = new WebSocket('ws://66.108.74.131/', 'echo-protocol');
     websocket.onopen = function(evt)
@@ -58,5 +58,5 @@ window.onload = (function()
     		document.getElementById('conversation').appendChild(pre);
 	};
 
-})();
+};
 
