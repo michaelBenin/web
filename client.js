@@ -7,8 +7,8 @@ window.onload = (function()
     	{
         	setTimeout(function()
 			{
-				var obj = {"msg":"A new user has joined"};
-				websocket.send(JSON.stringify(obj));
+				//var obj = {"msg":"A new user has joined"};
+				//websocket.send(JSON.stringify(obj));
 			}, 0);
     	};
 
