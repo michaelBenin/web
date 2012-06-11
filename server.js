@@ -81,6 +81,8 @@ function checkOrigin(origin)
 
 wsServer.on('request', function (request)
 {
+	console.log(connection.remoteAddress);
+	
 	if (!checkOrigin(request.origin))
 	{
 		request.reject();
