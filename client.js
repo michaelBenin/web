@@ -12,7 +12,8 @@ window.onload = (function()
 			}, 0);
     	};
 
-   	websocket.onclose = function (evt)
+   	websocket.onclose = close;
+	function close(evt)
     	{
 			setTimeout(function()
 			{
@@ -20,7 +21,8 @@ window.onload = (function()
 			}, 0);
     	};
    
-	websocket.onmessage = function(evt)
+	websocket.onmessage = message;
+	function message(evt)
     	{  
 		setTimeout(function()
 			{
@@ -29,7 +31,8 @@ window.onload = (function()
 			}, 0);
     	};
     	
-	websocket.onerror = function(evt)
+	websocket.onerror = error;
+	function error(evt)
     	{
 			setTimeout(function()
 			{
