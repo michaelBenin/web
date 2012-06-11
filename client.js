@@ -2,41 +2,40 @@ window.onload = (function()
 {
 	var wsUri = "ws://66.108.74.131/";
 	var protocol = "echo-protocol";
-	me = this
-   	websocket = new WebSocket(wsUri, protocol);
-    	me.websocket.addEventListener('open', function(evt)
+   	window.websocket = new WebSocket(wsUri, protocol);
+    websocket.onopen = function(evt)
     	{
         	setTimeout(function()
 			{
 				var obj = {"msg":"A new user has joined"};
 				websocket.send(JSON.stringify(obj));
 			}, 0);
-    	});
+    	};
 
-   	me.websocket.addEventListener('close', function (evt)
+   	websocket.onclose = function (evt)
     	{
 			setTimeout(function()
 			{
         		writeToScreen("Disconnected");
 			}, 0);
-    	});
+    	};
    
-	me.websocket.addEventListener('message', function(evt)
+	websocket.onmessage = function(evt)
     	{  
 		setTimeout(function()
 			{
 				var msg = JSON.parse(evt.data);
         		writeToScreen('<span style="color:blue;">Response: '+ msg.msg + '</span>');
 			}, 0);
-    	});
+    	};
     	
-	me.websocket.addEventListener('error', function(evt)
+	websocket.onerror = function(evt)
     	{
 			setTimeout(function()
 			{
         		writeToScreen('<span style="color:red;">Error: </span> '+ evt.data);
 			}, 0);
-    	});
+    	};
 
 	document.addEventListener('keypress', function keyPress(e) 
 	{
