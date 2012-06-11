@@ -1,0 +1,1 @@
+Client JS now parsing JSON as well as better syntax, Server JS now sending JSON
